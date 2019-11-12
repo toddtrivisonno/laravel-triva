@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Resources\UserCollection;
+use App\User;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,4 +15,8 @@
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/users', function () {
+    return new UserCollection(User::all());
 });
