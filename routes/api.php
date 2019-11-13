@@ -1,6 +1,4 @@
 <?php
-use App\Http\Resources\UserCollection;
-use App\User;
 
 // use Illuminate\Http\Request;
 
@@ -15,7 +13,12 @@ use App\User;
 |
 */
 
+Route::get('/users', 'UserController@index');
 
-Route::get('/users', function () {
-    return new UserCollection(User::all());
-});
+Route::get('/profiles', 'ProfileController@index');
+
+Route::get('/follows', 'FollowController@index');
+
+Route::get('/activities', 'ActivitiesController@index');
+
+Route::get('/kudos', 'KudosController@index');
